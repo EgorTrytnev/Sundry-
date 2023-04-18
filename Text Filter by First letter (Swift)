@@ -1,4 +1,5 @@
-    allArray: [Your type] = []
+class TableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {  
+  allArray: [Your type] = []
     filterArray: [Your Type] = []
     
     
@@ -35,4 +36,5 @@
        
 
         
+             }
     }

@@ -1,0 +1,38 @@
+    allArray: [Your type] = []
+    filterArray: [Your Type] = []
+    
+    
+    func filterAr(text:String){
+        filterArray.removeAll()
+        filterArray = allArray.filter({(element) -> Bool in
+            var d: String.Index
+                d = element.name.startIndex
+                if searchController.searchBar.text != ""{
+                    if element.name[d] == text[d]{
+                        return element.name.lowercased().contains(text.lowercased())
+                    }
+                }
+                    return false
+
+            })
+        
+        }
+                                         
+    private func filter(text: String){
+        filterAr(text: text)
+        tableView.reloadData()
+    }
+    private func searchBarEmpty()-> Bool{
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    private func isSearch()-> Bool {
+        return searchController.isActive && !searchBarEmpty()
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        filterAr(text: searchController.searchBar.text!)
+       
+
+        
+    }
